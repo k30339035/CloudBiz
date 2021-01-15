@@ -16,7 +16,7 @@ git config --global -e
 ```
 
 <p align="center">
-<a url="https://www.github.com/">  <img width="1024" height="768" src="https://github.com/k30339035/CloudBiz/blob/main/git/gitconfig.JPG"> </a>
+<a url="https://www.github.com/">  <img src="https://github.com/k30339035/CloudBiz/blob/main/git/gitconfig.JPG"> </a>
 </p>
 
 
