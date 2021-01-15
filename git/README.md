@@ -14,6 +14,12 @@ git config --global user.email sungsu.kim@shinsegae.com
 ```
 git config --global -e 
 ```
+
+<p align="center">
+<a url="https://www.github.com/">  <img width="1024" height="768" src="https://github.com/k30339035/CloudBiz/blob/main/git/gitconfig.JPG"> </a>
+</p>
+
+
 ## 커밋
 ```
  git commit -am "web"
