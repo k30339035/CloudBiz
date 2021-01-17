@@ -23,8 +23,18 @@ git init
 ### 인덱스에 파일 추가
 ```
 git add <file>
+git add *.html
+
+```
+### 전체 파일 추가 - .
+```
+git add .
 ```
 
+#### untrack 파일 - (인덱스에서 제외)
+```
+git remove --cached index.html app.js 
+```
 ### git 파일 상태 
 ```
 git status 
@@ -33,10 +43,33 @@ git status
 ```
 git commit 
 ```
+
+파일 내용 수정
+```
+# Initial commit => Initial commit 
+```
+
 ### 추가 파일 확인 
 ```
 git commit -am "web"
 ```
+### 파일변경 
+```
+git commit -m "app.js"
+```
+### 파일 무시
+```
+touch .gitignore 
+```
+#### .gitignore 파일내에 파일명을 기술 
+
+```
+log.txt
+/images
+/external
+*.txt
+```
+
 ### 사용자 
 ```
 git config --global user.name koreasungsu
@@ -91,4 +124,34 @@ git pull
 git clone 
 ```
 
+## git branch 
+```
+git branch login 
+git status
+git commit -m 'another branch'
+```
+### git branch 변경
+```
+git checkout login 
+Switched to branch 'login'
+M       app.js
+M       index.html
+```
+###
+```
+git add .
+git commit -m 'login form'
+```
+### git master 변경
+```
+git checkout master 
 
+```
+### git merge
+```
+git merge
+```
+###  "Added login" 파일 추가   
+```
+Added login 
+```
