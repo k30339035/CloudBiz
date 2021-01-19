@@ -2,7 +2,7 @@ Chocolatey
 ***installed package***
 
 ```
-choco install shotcut
+choco install -y shotcut 
 choco install googlechrome
 choco install firefox
 choco install sublimetext3
@@ -21,7 +21,7 @@ choco install unity -y
 choco install kubernetes-cli
 
 choco install ngrok.portable
-
+choco install serverless -y 
 ```
 
 ***Error Package***
