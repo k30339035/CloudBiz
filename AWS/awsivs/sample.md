@@ -1,10 +1,12 @@
+IVS Region: us-west-2
+
 ```
 aws s3api create-bucket --bucket <my-bucket-name> --region <my-region> \
 --create-bucket-configuration LocationConstraint=<my-region>
 ```
 
 ```
-aws s3api create-bucket --bucket sungsuivschat --region ap-northeast-2 --create-bucket-configuration LocationConstraint=ap-northeast-2
+aws s3api create-bucket --bucket sungsuivschat3 --region ap-northeast-2 --create-bucket-configuration LocationConstraint=ap-northeast-2
 {
     "Location": "http://sungsuivschat.s3.amazonaws.com/"
 }
@@ -17,7 +19,7 @@ sam package \
 ```
 
 ```
-sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket sungsuivschat
+sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket sungsuivschat1
 SAM CLI now collects telemetry to better understand customer needs.
 
         You can OPT OUT and disable telemetry collection by setting the
@@ -40,8 +42,19 @@ sam deploy \
 --capabilities CAPABILITY_IAM
 
 
-sam deploy --template-file packaged.yaml --stack-name sungsuivschat --capabilities CAPABILITY_IAM
+sam deploy --template-file packaged.yaml --stack-name sungsuivschat3 --capabilities CAPABILITY_IAM
 
 sam deploy --template-file C:\git\amazon-ivs-simple-chat-web-demo\serverless\packaged.yaml --stack-name sungsuivschat
+
+
+sam deploy \
+--template-file packaged.yaml \
+--stack-name <my-stack-name> \
+--capabilities CAPABILITY_IAM \
+--parameter-overrides TableName=<my-table-name>
+
+*+-*
+                                                        
+sam deploy --template-file packaged.yaml --stack-name sungsuivschat2 --capabilities CAPABILITY_IAM --parameter-overrides TableName=products
 
 
