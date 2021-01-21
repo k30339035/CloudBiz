@@ -38,3 +38,8 @@ uninstall
 choco uninstall sublimetext3
 
 ```
+
+### 설치 패키지 확인
+```
+choco list --localonly
+```
