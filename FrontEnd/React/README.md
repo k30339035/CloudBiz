@@ -50,3 +50,16 @@ npx create-react-app firstapp
 cd firstapp
 yarn start 
 ```
+
+### Class
+```
+import React, { Component } from 'react'
+class First extends Component {
+    render() {
+        return <h1>Class Component </h1>
+    }
+}
+
+export default First 
+
+```
