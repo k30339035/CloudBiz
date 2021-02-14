@@ -17,7 +17,7 @@ cd "C:\react\mart" && npx react-native run-android
 npm i react-native-vector-icons
 react-native link react-native-vector-icons
 
-
+npm i uuidv4
 
 ```
 

@@ -63,3 +63,15 @@ class First extends Component {
 export default First 
 
 ```
+
+
+
+### expo
+```
+npm install -g expo-cli 
+expo init expomartapp
+
+```
+
+
+
