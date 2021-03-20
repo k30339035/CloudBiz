@@ -1,3 +1,5 @@
+# 내용이 이해가 가지 않으신 분은 createman@naver.com 입니다. 
+#
 ### paramiko 설치 - Ubuntu 18.04
 
 ```
