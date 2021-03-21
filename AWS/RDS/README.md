@@ -1,6 +1,6 @@
 # RDS
 
-## 1. RDS 연결
+## 1. RDS - mysql 연결
 
 ```
 mysql -h sungsudb.cluster-cpjqp9c0hcm6.ap-northeast-2.rds.amazonaws.com -u admin -p
