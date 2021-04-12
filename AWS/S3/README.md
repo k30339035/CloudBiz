@@ -28,3 +28,8 @@ Amazon Resource name(ARN): arn:aws:s3:::sungsuglue/*
 
 
 CloudFront 
+
+
+https://aws.amazon.com/ko/blogs/opensource/parallelizing-s3-workloads-s5cmd/
+
+
