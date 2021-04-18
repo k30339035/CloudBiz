@@ -72,6 +72,41 @@ kubectl get daemonset kube-proxy --namespace kube-system -o=jsonpath='{$.spec.te
 
 ### https://aws.amazon.com/ko/blogs/korea/amazon-eks-windows-container-support-now-generally-available/
 
+
+```
+ap-northeast-2b ap-northeast-2a ap-northeast-2c
+
+# Create Cluster
+eksctl create cluster --name=sungsumart2 \
+                      --region=ap-northeast-2 \
+                      --version 1.15 \ 
+                      --without-nodegroup
+                      --node-type t3.medium \
+                      --zones=ap-northeast-2a,ap-northeast-2c \
+
+
+eksctl create nodegroup --cluster=sungsumart2 \
+                       --region=ap-northeast-2 \
+                       --name=sungsumart2-ng-public1 \
+                       --node-type=t3.medium \
+                       --nodes=2 \
+                       --nodes-min=2 \
+                       --nodes-max=4 \
+                       --node-volume-size=20 \
+                       --ssh-access \
+                       --ssh-public-key=corpseoul \
+                       --managed \
+                       --asg-access \
+                       --external-dns-access \
+                       --full-ecr-access \
+                       --appmesh-access \
+                       --alb-ingress-access 
+
+
+
+```
+
+
 ```
 eksctl create cluster \
 --name demo-windows-cluster \
@@ -85,6 +120,7 @@ eksctl create cluster \
 
 eksctl create cluster \
 --name demo-windows-cluster \
+--region=ap-northeast-2
 --version 1.15 \
 --nodegroup-name standard-workers \
 --node-type t3.medium \
@@ -107,7 +143,7 @@ eksctl create nodegroup \
 --node-type t3.medium \
 --nodes 3 \
 --nodes-min 1 \
---nodes-max 4 \
+--nodes-max 5 \
 --node-ami-family WindowsServer2019FullContainer \
 --node-ami ami-0f85de0441a8dcf46
 ```
@@ -153,8 +189,6 @@ eksctl create nodegroup \
 --ssh-public-key corpseoul 
 
 
-
-
 date && 
 eksctl delete nodegroup \
 --cluster demo-windows-cluster \
@@ -177,8 +211,17 @@ date &&
 eksctl delete cluster --name demo-windows-cluster
 date
 
+```yaml
+date && 
+eksctl delete cluster --name sungsumart2
+date
 
 
+eksctl delete nodegroup \
+--cluster sungsumart2 \
+--name sungsumart2-ng-public1
+```
+kubectl run sungsu-pod1 --image stacksimplify/kubenginex:1.0.0 --generator=run-pod/v1
 
 
 
