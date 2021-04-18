@@ -8,6 +8,10 @@ echo "START"
 vhost=$1
 vcpu=$2
 
+find_string(){
+    if grep -q sungsu /etc/login.defs; then echo "result"; fi
+}
+
 # Security List - 01
 function list01()
 {
