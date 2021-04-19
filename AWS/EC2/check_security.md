@@ -33,13 +33,28 @@ recover_sshd_root(){
         sed -i 's/PermitRootLoging no/PermitRootLogin yes/g' /etc/ssh/sshd_config
 }
 change_max_days(){
-        sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t60/g' /etc/login.defs
+    if [ "`sed -n '/^PASS_MAX_DAYS/p' /etc/login.defs`" != "" ]; 
+    then
+        sed -i 's/^PASS_MAX_DAYS/#PASS_MAX_DAYS/' /etc/login.defs
+        sed -i '25a\PASS_MAX_DAYS   60' /etc/login.defs
+    fi
+      #  sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t60/g' /etc/login.defs
 }
 change_min_days(){
-        sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t-1/g' /etc/login.defs
+    if [ "`sed -n '/^PASS_MIN_DAYS/p' /etc/login.defs`" != "" ]; 
+    then
+        sed -i 's/^PASS_MIN_DAYS/#PASS_MIN_DAYS/' /etc/login.defs
+        sed -i '27a\PASS_MIN_DAYS   1' /etc/login.defs
+    fi
+#        sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t-1/g' /etc/login.defs
 }
 change_min_len(){
-        sed -i 's/PASS_MIN_LEN\t5/PASS_MIN_LEN\t-1/g' /etc/login.defs
+    if [ "`sed -n '/^PASS_MIN_LEN/p' /etc/login.defs`" != "" ]; 
+    then
+        sed -i 's/^PASS_MIN_LEN/#PASS_MIN_LEN/' /etc/login.defs
+        sed -i '27a\PASS_MIN_LEN    8' /etc/login.defs
+    fi
+#        sed -i 's/PASS_MIN_LEN\t5/PASS_MIN_LEN\t-1/g' /etc/login.defs
 }
 list01
 list02
