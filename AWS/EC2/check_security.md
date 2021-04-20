@@ -38,7 +38,7 @@ delete_group(){
         userdel $u
     done
     
-    delete_group="tty disk lp mem kmem cdrom man dialout floppy games tape video lock audio utmp utempter input systemd-network rpcuser nfsnobody ec2-instance-connect slocate rngd stapusr stapsys stapdev"
+    delete_group="tty disk mem kmem cdrom man dialout floppy games tape video lock audio utmp utempter input slocate  stapusr stapsys stapdev"
     for i in $delete_group:
     do 
         echo $i 
