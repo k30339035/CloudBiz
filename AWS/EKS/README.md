@@ -4,6 +4,32 @@
 
 ```
 
+
+## EKS commands 자동완성
+```
+source <{kubectl completion bash} 
+echo "source <{kubectl completion bash}" >> ~/.bashrc
+```
+
+## EKS commands 
+```
+Ctrl + l # 화면 cls 
+kubectl get events
+watch k get pot #2초 리프레시
+k get po -o wide --watch #line by line 출력 
+k get po --all-namespaces
+k run redis --image=redis123 --dry-run -o yaml 
+k describe pod redis
+k edit pod redis
+
+
+
+cat <<-EOF > terraform.tfvars
+region = "ap-northeast-2"
+name   = "acme-test-cluster"
+EOF
+```
+
 ## Kubectl 설치 
 kubectl cluster-info
 

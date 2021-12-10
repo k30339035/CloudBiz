@@ -5,3 +5,12 @@
 ```
 Get-ChildItem -Path Env:\ 
 ```
+
+
+### Alias
+```
+get-alias
+
+set-alias k kubectl 
+
+```
