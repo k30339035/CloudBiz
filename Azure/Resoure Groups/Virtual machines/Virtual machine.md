@@ -1,0 +1,4 @@
+## default user 
+azureuser 
+
+## Scaling 

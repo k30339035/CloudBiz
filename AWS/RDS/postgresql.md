@@ -1,5 +1,28 @@
 ### postgre sql
 
+## postgresql13 Timezone 변경
+- Cluster parameter group 변경
+```
+=> 새로 cluster parameter group 추가 후 timezone을 UTC+9으로 변경 
+
+ * 접속 후 쿼리 확인 
+postgres=> show timezone;
+ TimeZone
+----------
+ UTC+9
+(1 row)
+<Asia/Seoul>
+
+```
+- KST 변경 
+```
+=> cluster parameter group 에서 client_encoding 을 EUC_KR
+postgres=> show client_encoding;
+ client_encoding
+-----------------
+ LATIN1
+(1 row)
+```
 https://www.scalingpostgres.com/tutorials/postgresql-streaming-replication/
 
 ```linux
